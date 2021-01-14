@@ -1,6 +1,6 @@
 # CA3 quick start code: Backend Boilerplate
 
-(Insert travis URL)
+[![Build Status](https://travis-ci.com/cph-pk/3sem_eksamen_backend.svg?branch=main)](https://travis-ci.com/cph-pk/3sem_eksamen_backend)
 
 <br>
 
