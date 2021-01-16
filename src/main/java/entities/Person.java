@@ -13,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -64,6 +65,9 @@ public class Person implements Serializable {
     @JoinColumn(name = "address_id")
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Address address;
+    
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "person")
+    private List<Loan> loanList;
 
     public Person() {
     }
@@ -161,6 +165,13 @@ public class Person implements Serializable {
         roleList.add(userRole);
     }
 
+    public void addLoan(Loan loan) {
+        if (loan != null) {
+            loanList.add(loan);
+            loan.setPerson(this);
+        }
+    }
+    
     public String getPhone() {
         return phone;
     }
