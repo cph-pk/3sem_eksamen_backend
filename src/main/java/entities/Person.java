@@ -67,7 +67,7 @@ public class Person implements Serializable {
     private Address address;
     
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "person")
-    private List<Loan> loanList;
+    private List<Loan> loanList = new ArrayList<>();
 
     public Person() {
     }

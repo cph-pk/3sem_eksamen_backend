@@ -2,6 +2,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -46,9 +47,9 @@ public class Book implements Serializable {
     private String publishYear;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "book")
-    private List<Loan> loanList;
+    private List<Loan> loanList = new ArrayList<>();
     
-    @JoinColumn(name = "library_id_id")
+    @JoinColumn(name = "library_id")
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Library library;
     

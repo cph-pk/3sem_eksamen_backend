@@ -12,6 +12,7 @@ public class BookDTO {
     private String authors;
     private String publisher;
     private String publishYear;
+    private Long id;
 
     public BookDTO(Book book) {
         this.isbn = book.getIsbn();
@@ -19,6 +20,7 @@ public class BookDTO {
         this.authors = book.getAuthors();
         this.publishYear = book.getPublisher();
         this.publishYear = book.getPublishYear();
+        this.id = book.getId();
     }
 
     public String getIsbn() {
@@ -59,6 +61,14 @@ public class BookDTO {
 
     public void setPublishYear(String publishYear) {
         this.publishYear = publishYear;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
     

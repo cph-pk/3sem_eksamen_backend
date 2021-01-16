@@ -5,3 +5,6 @@ nb-configuration.xml
 
 /src/main/java/utils/SetupTestUsers.java
 /nbproject/
+
+/src/main/java/utils/SetupLibrary.java
+/nbproject/

@@ -2,6 +2,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -38,7 +39,7 @@ public class Library implements Serializable {
     }
     
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "library")
-    private List<Book> bookList;
+    private List<Book> bookList = new ArrayList<>();
     
     public Long getId() {
         return id;
