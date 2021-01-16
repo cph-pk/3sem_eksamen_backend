@@ -4,6 +4,7 @@ package facades;
 import dto.BookDTO;
 import dto.BooksDTO;
 import entities.Book;
+import entities.Library;
 import errorhandling.MissingInputException;
 import errorhandling.NotFoundException;
 import javax.persistence.EntityManager;
@@ -81,9 +82,16 @@ public class BookFacade {
         }
         EntityManager em = emf.createEntityManager();
         Book book = new Book(isbn, title, authors, publisher, publishYear);
+        
+        Long id = 1L; // Not the correct way, but there is only one Library in DB with ID 1
+        Library library = em.find(Library.class, id);
+        library.addBook(book);
+        
+        System.out.println("LLLLL " + library.getId());
         try {
             em.getTransaction().begin();
             em.persist(book);
+            em.merge(library);
             em.getTransaction().commit();
         } finally {
             em.close();
