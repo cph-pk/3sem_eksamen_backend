@@ -7,20 +7,21 @@ import entities.Book;
  * @author Per
  */
 public class BookDTO {
+    private Long id;
     private String isbn;
     private String title;
     private String authors;
     private String publisher;
     private String publishYear;
-    private Long id;
+    
 
     public BookDTO(Book book) {
+        this.id = book.getId();
         this.isbn = book.getIsbn();
         this.title = book.getTitle();
         this.authors = book.getAuthors();
-        this.publishYear = book.getPublisher();
+        this.publisher = book.getPublisher();
         this.publishYear = book.getPublishYear();
-        this.id = book.getId();
     }
 
     public String getIsbn() {
