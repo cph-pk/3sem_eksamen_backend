@@ -18,5 +18,13 @@ public class BooksDTO {
         });
     }
 
+    public List<BookDTO> getAll() {
+        return all;
+    }
+
+    public void setAll(List<BookDTO> all) {
+        this.all = all;
+    }
+
    
 }
